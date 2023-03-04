@@ -1,0 +1,42 @@
+
+// Generate SSH Key
+ssh-keygen -t ed25519 -C "sachindurge2205@gmail.com"
+
+
+// Run ssh-agent
+eval "$(ssh-agent -s)"
+>
+
+//  config ssh key 
+ssh-add ~/.ssh/id_ed25519
+
+
+// View SSH Key  - in this location
+ C:\Users\your_username/.ssh
+
+
+
+// Git Status 
+git status 
+
+// Git Remote -- View Remote Repositiory
+git remote 
+
+
+// add remote Repositiory  -- origin is remote repo you give name 
+git add remote add origin remote_repo_url 
+
+
+// push code on remote repo  -- push code after commit 
+git push -u origin master 
+
+
+// add files in staging area 
+git add . 
+
+// commit staged files  
+git commit -m "added by sachin"
+
+
+
+ 

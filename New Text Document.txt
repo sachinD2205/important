@@ -1,0 +1,145 @@
+// Authority 
+
+// role base
+  const [authority, setAuthority] = useState();
+  let selectedMenuFromDrawer = localStorage.getItem("selectedMenuFromDrawer");
+  const user = useSelector((state) => state.user.user);
+
+  useEffect(() => {
+    let auth = user?.menus?.find((r) => {
+      if (r.id == selectedMenuFromDrawer) {
+        return r;
+      }
+    })?.roles;
+    setAuthority(auth);
+    console.log("SachinUser", auth);
+  }, []);
+
+
+ {/** LOI Generation Button */}
+            {record?.row?.applicationStatus ===
+              "APPLICATION_VERIFICATION_COMPLETED" &&
+              authority?.find(
+                (r) => r === "PAYEMENT_SUCCESSFUL" || r === "ADMIN",
+              ) && (
+                <IconButton>
+                  <Button
+                    variant='contained'
+                    size='small'
+                    onClick={() => {
+                      reset(record.row);
+                      setValue("serviceName", record.row.serviceId);
+                      loiGenerationOpen();
+                    }}
+                  >
+                    LOI Generation
+                  </Button>
+                </IconButton>
+              )}
+
+
+
+
+              let _res = result.map((data, index) => {
+          console.log("data43534result5565", data?.status);
+          return { ...data, srNo: index + 1 };
+        });
+
+
+
+
+
+         {params?.row?.status === "Bill_Raised" &&
+                authority?.find(
+                  (r) => r === "BILL_SUBMISSION" || r === "ADMIN",
+                ) && (
+                  <>
+                    <IconButton>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        onClick={() => {
+                          {
+                            /** Table Data */
+                          }
+                          const tempBillDetail = params?.row?.billDetail;
+                          const attachments = params?.row?.attachments;
+                          const billDetail = tempBillDetail.map(
+                            (data, index) => {
+                              return {
+                                ...data,
+                                srNo: index + 1,
+                                // sub type eng
+                                caseMainTypeEng: caseMainTypes.find((data1) => {
+                                  return data?.caseMainType == data1?.id;
+                                })?.caseMainType,
+                                // sub type mr
+                                caseMainTypeMar: caseMainTypes.find((data1) => {
+                                  return data?.caseMainType == data1?.id;
+                                })?.caseMainTypeMr,
+                                // sub type eng
+                                caseSubTypeEng: caseSubTypes.find((data1) => {
+                                  return data?.caseSubType == data1?.id;
+                                })?.subType,
+                                // sub type mr
+                                caseSubTypeMar: caseSubTypes.find((data1) => {
+                                  return data?.caseSubType == data1?.id;
+                                })?.caseSubTypeMr,
+                              };
+                            },
+                          );
+
+                          {
+                            /** Table Row Data */
+                          }
+                          const tableRowData = {
+                            ...params?.row,
+                            pageMode: "View",
+                            role: "BILL_SUBMISSION",
+                            designation: "dept_Clerk",
+                          };
+
+                          localStorage.setItem("role", "BILL_SUBMISSION");
+
+                          {
+                            /** 1st and 2nd Tab */
+                          }
+                          localStorage.setItem(
+                            "tableRowData",
+                            JSON.stringify(tableRowData),
+                          );
+
+                          {
+                            /** Attachments */
+                          }
+                          localStorage.setItem(
+                            "attachments",
+                            JSON.stringify(
+                              attachments.map((data, index) => {
+                                return { ...data, srNo: index + 1 };
+                              }),
+                            ),
+                          );
+
+                          {
+                            /** Biill Details */
+                          }
+                          localStorage.setItem(
+                            "billDetail",
+                            JSON.stringify(billDetail),
+                          );
+
+                          {
+                            /** Push To This Url  */
+                          }
+                          router.push({
+                            pathname:
+                              "/LegalCase/transaction/demandedBillToAdvocate/Scrutiny",
+                          });
+                        }}
+                      >
+                        Dept Clerk
+                      </Button>
+                    </IconButton>
+                  </>
+                )}

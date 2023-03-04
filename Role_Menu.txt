@@ -1,0 +1,53 @@
+
+---------------------------------------------------------
+
+--- application table (application) -----
+
+applicantionName - Steet Vendor Management System
+appId- HMS
+id  - 4 
+
+
+
+-----------------------------------------------------------
+
+------ service table (mstService) ---------------------
+
+
+IssuanceofHawkerLicense --->
+id - 24 
+click to - /streetVendorManagementSystem/transactions/issuanceOfSteetVendorLicense
+
+
+
+-----------------------------------------------------------
+------------  parentid   -----------
+
+Dashboard  -->
+id 1 srno 1
+
+Masters  -->
+id 2 srno 2
+
+Transactions -->
+id 3 srno 3    
+
+Reports  --->
+
+id 4 srno 4     
+
+
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------
+
+

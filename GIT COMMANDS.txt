@@ -1,0 +1,32 @@
+
+
+git  --version
+
+
+
+
+
+
+Linux commands ---
+
+Pwd - present working directory
+ls - list content
+cd - Change Directory   == /c
+
+
+
+
+========================
+ git config --global user.name "sachin2205"
+ git config user.name
+ git config --global user.email "sachindurge2205@gmail.com"
+ git config user.email
+ git config --list
+ git config --global core.editor
+
+
+  git status 
+  git init 
+  git add --a   ==== means all files staging area 
+  git commit -m "intital commit"
+  git log 

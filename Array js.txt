@@ -1,0 +1,4 @@
+ const billDetail = tempBillDetail.map((data, index) => {
+                    return { ...data, srNo: index + 1 };
+                  });
+				  
